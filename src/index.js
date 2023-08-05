@@ -1,7 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
-
 const {PORT}  = require('./config/serverConfig');
 
 const setupAndStartServer = async () =>{
@@ -12,9 +11,9 @@ const setupAndStartServer = async () =>{
     app.use(bodyParser.urlencoded({extended:true}));
 
     // const PORT = 3000
-    app.listen(PORT,()=>{
+    app.listen(PORT,async ()=>{
         console.log(`Server started on port ${PORT}`); // String Interpolation
-        
+
     })
 }
 

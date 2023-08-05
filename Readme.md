@@ -37,6 +37,7 @@
 ```
 
 - Once you've added your db config as listed above, go to the source folder from your terminal and execute `npx sequelize db:create`
+- Run `sequelize db:migrate --env development`. This will run all migrations that are present inside 
 ```
 
 
@@ -92,3 +93,5 @@
 // one city to many airports
 
 //Migrations help us to create incremental changes to our database
+
+//All the interactions with the model should happen at the repository level
