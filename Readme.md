@@ -34,10 +34,61 @@
     "dialect": "mysql"
   }
 }
-<<<<<<< HEAD
 ```
 
 - Once you've added your db config as listed above, go to the source folder from your terminal and execute `npx sequelize db:create`
-=======
 ```
->>>>>>> 0b01a83ff3ceba6b5dc19d072543775c890fe7ed
+
+
+## Flights Table
+- id -unique id to identify the flights
+
+## Db Design
+  - Airplane Table
+  - Flight
+  - City
+  - Airport
+  - City
+// Different Services should have different databases
+
+// Airplane Table
+// ID --> Cannot be same for 2 planes
+// model_no --> Can be same for multiple airplanes
+// capacity
+// created at
+// updated at
+
+
+//Flights
+// Id
+// src_airport_id
+// dest_airport_id
+// departure date
+// arrival date
+// departure time
+// arrival time
+
+
+//City
+// id
+// name
+
+
+// Airport
+// Id
+// name
+// city_id
+// address
+
+
+//  Entity Relationship diagram
+
+//City ---> Airport
+
+// Airplane --> Many Flights (one to many relation)
+
+// One airport to many flights 
+
+// one city to many airports
+
+//Migrations help us to create incremental changes to our database
