@@ -3,6 +3,8 @@ const bodyParser = require('body-parser');
 
 const {PORT}  = require('./config/serverConfig');
 
+// const cityRepository = require('./repository/city-repository');
+
 const setupAndStartServer = async () =>{
     //create the express object
     const app = express();
@@ -13,7 +15,7 @@ const setupAndStartServer = async () =>{
     // const PORT = 3000
     app.listen(PORT,async ()=>{
         console.log(`Server started on port ${PORT}`); // String Interpolation
-
+        // const city = new cityRepository(); // This is how we can delete !!
     })
 }
 
