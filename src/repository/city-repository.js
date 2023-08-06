@@ -24,7 +24,6 @@ class cityRepository {
 
 
     constructor(){
-
     }
 
     async createCity({name}){
