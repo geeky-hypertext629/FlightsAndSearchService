@@ -13,6 +13,8 @@ eg. logStuff = [logOriginalUrl,logMethod]
 
 // CONTROLLER HAS THE RESPONSIBILITY TO RETURN THE DATA
 
+//CLEAN CODE IS VERY IMPORTANT !!
+
 const {CityService} = require("./../services/index");
 
 const cityService = new CityService();
@@ -110,3 +112,36 @@ module.exports = {
     update,
     get
 }
+
+
+/*
+Why do we need route ?
+We need express.Router() -> it helps in writing clean code ..!!
+/birds
+/birds/about
+/birds/help
+
+Normally you would do
+
+app.get("/birds",(req,res)=>{
+res.send('Bird route');
+})
+app.get("/birds/about",(req,res)=>{
+res.send('Bird route');
+})
+app.get("/birds/help",(req,res)=>{
+res.send('Bird route');
+})
+
+Every route has same prefix '/birds'
+
+now what router does is as soon as it sees /birds it maps to the /bird route and we then only have to write /, /about, /help
+
+api/v1/ --> here v1 stands for version 1
+
+Make a router file where all the routes are handled.
+export the router
+v1 route 
+v2 route 
+api route
+*/
