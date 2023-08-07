@@ -15,7 +15,7 @@ eg. logStuff = [logOriginalUrl,logMethod]
 
 //CLEAN CODE IS VERY IMPORTANT !!
 
-const {CityService} = require("./../services/index");
+const {CityService}=require('../services/index');
 
 const cityService = new CityService();
 
@@ -67,11 +67,12 @@ const get = async (req,res)=>{
     
     try {
         const response = await cityService.getCity(req.params.id);
-        res.status(200).json({
+        console.log("Hello")
+        return res.status(200).json({
             data : response,
             success : true,
             message : 'Successfully fetched a city',
-            ree : {}
+            err : {}
         }) ;
     } catch (error) {
         console.log(error);
@@ -106,11 +107,33 @@ const update = async (req,res)=>{
     
 }
 
+
+const getAll = async (req,res)=>{
+    try {
+        const cities = await cityService.getAllCities();
+       return res.status(200).json({
+            data : cities,
+            success : true,
+            message : 'Successfully fetched all cities',
+            err : {}
+        }) ;
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({
+            data : {},
+            success : false,
+            message : "Not able to fetch the Cities",
+            err : error
+        });
+    }
+}
+
 module.exports = {
     create,
     destroy,
     update,
-    get
+    get,
+    getAll
 }
 
 

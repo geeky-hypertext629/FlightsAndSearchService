@@ -95,3 +95,4 @@
 //Migrations help us to create incremental changes to our database
 
 //All the interactions with the model should happen at the repository level
+
