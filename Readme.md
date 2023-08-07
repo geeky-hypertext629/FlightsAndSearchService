@@ -100,3 +100,9 @@
 //City has many airports and airport belongs to single city
 // City ====> id,name ,created at,updated at
 // Airport ==> id, name, city, address, created At, updated At..
+
+```
+npx sequelize model:generate --name Airport --attributes name:String,address:String,cityId:integer
+```
+
+// Seeders can help you to put some starting data in your database

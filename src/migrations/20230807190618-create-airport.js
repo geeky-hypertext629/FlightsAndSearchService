@@ -23,7 +23,8 @@ module.exports = {
           model: 'Cities', // Since cityId is referring to the model City
            key : 'id',  // From the City model the id column acts as the cityId here ..
            as: 'cityId'  
-        }
+        },
+        allowNull:false
       },
       createdAt: {
         allowNull: false,
