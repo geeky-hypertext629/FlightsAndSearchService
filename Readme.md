@@ -96,3 +96,7 @@
 
 //All the interactions with the model should happen at the repository level
 
+
+//City has many airports and airport belongs to single city
+// City ====> id,name ,created at,updated at
+// Airport ==> id, name, city, address, created At, updated At..
