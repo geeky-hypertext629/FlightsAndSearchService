@@ -12,8 +12,9 @@ const sequelize = require('sequelize');
 const setupAndStartServer = async () =>{
     //create the express object
     const app = express();
-
     app.use(bodyParser.json());
+
+    // const {Airplane} = require('./models/index');
     app.use(bodyParser.urlencoded({extended:true}));
     app.use('/api',ApiRoutes); 
     // const PORT = 3000
@@ -30,22 +31,26 @@ const setupAndStartServer = async () =>{
         // console.log(airports);
         
         // db.sequelize.sync({alter:true});
-        const city = await City.findOne({
-            where : {
-                id:1
-            }
-        })
-        const airports = await city.getAirports();
-        const newAirport =  await Airport.findOne({
-            where :{
-                id : 1
-            }
-        })
-        await city.addAirport(newAirport);
+        // const city = await City.findOne({
+        //     where : {
+        //         id:1
+        //     }
+        // })
+        // const airports = await city.getAirports();
+        // const newAirport =  await Airport.findOne({
+        //     where :{
+        //         id : 1
+        //     }
+        // })
+        // await city.addAirport(newAirport);
         // city.addAirport({
         //     name : "Kagalnagar"
         // })
         // console.log(city,airports)
+        // await Airplane.create({
+        //     modelNumber:  'Bombardier CRJ'
+        // })
+
     })
 }
 
